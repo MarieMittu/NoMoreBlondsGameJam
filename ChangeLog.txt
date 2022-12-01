@@ -1,0 +1,14 @@
+21/11/2012 AP
++ Handle of Stamina Bar 
+  Based on Blonde collisions:
+  - Increased when Blonde collides with Bullet AND is not Blond; 
+  - Decreased when Blonde collides with Prof AND is Blond
+  - Created static instance for StaminaManager and BiondeManager classes
++ Handling Blonde state (isBlonde isSmart)
+  - Created static instance for BiondeManager class, changing value of isBlond based on collisions:
+  - isBlond starts as false, it becomes true when collides with Bullet and false when with prof;
++ Handling Prof movements based on Blonde state
+  - Created static instance for ProfManager, SpawnProf and StaminaManager classes
+  - Based on isBlond value of BlondeManager and isActive value of ProfManager, if both are true the prof starts looking for closest bionda (FindClosestBionda).
+  - Created DisableState and EnableState methods for handling scenario when we remove prof from the scene.
+    When prof gets removed, isActive state gets false value. When prof reappears, isActive state gets true value.
